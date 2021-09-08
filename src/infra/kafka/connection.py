@@ -20,7 +20,7 @@ class KafkaConnection:
     def __init__(self):
         pass
 
-    def get_producer(self, message: Dict) -> KafkaProducer:
+    def get_producer(self) -> KafkaProducer:
         if self._producer is None:
             self._producer = KafkaProducer(
                 bootstrap_servers=['localhost:9092'],
@@ -29,7 +29,7 @@ class KafkaConnection:
         return self._producer
 
 
-    def get_consumer(self, message: Dict) -> KafkaConsumer :
+    def get_consumer(self) -> KafkaConsumer :
         if self._consumer is None:
             self._consumer = KafkaConsumer(
                 bootstrap_servers='localhost:9092',
