@@ -1,0 +1,1 @@
+from src.contracts.providers.stocks_provider_contract import StocksProvidersContract
