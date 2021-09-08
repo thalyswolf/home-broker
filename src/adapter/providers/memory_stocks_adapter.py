@@ -5,10 +5,11 @@ from src.core.entity import Stocks
 class MemoryStocksAdapter:
 
     def create(result: Dict) -> Stocks:
-        return Stocks(
-            company_name=result['name'],
-            ticket=result['ticket'],
-            line_of_business=result['lineOfBusiness'],
-            price_sell=result['priceSell'],
-            price_buy=result['priceBuy']
-        )
+        stocks = Stocks()
+        stocks.company_name = result['name']
+        stocks.ticket = result['ticket']
+        stocks.line_of_business = result['lineOfBusiness']
+        stocks.price_sell = result['priceSell']
+        stocks.price_buy = result['priceBuy']
+        
+        return stocks
