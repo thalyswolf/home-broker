@@ -6,9 +6,9 @@ from src.contracts.database import StocksOfferDatabaseContract
 from src.core.entity import StocksOffer
 
 """ 
-1 - Consult values in provider
-2 - Insert Offers in database 
-3 - Notify the microservices notifications
+    1 - Consult values in provider
+    2 - Insert Offers in database 
+    3 - Notify the microservices notifications
 """
 
 class GenerateOffers:
