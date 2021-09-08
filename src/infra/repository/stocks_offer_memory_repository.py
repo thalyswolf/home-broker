@@ -25,4 +25,6 @@ class StocksOfferMemoryRepository(StocksOfferDatabaseContract):
 
     def generate_offer(self, stock_offer: StocksOffer) -> StocksOffer:
         stock_offer._id = str(uuid4())
-        self.offers.append(stock_offer)        
+        self.offers.append(stock_offer)
+        
+        return stock_offer
