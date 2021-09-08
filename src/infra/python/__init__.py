@@ -1,0 +1,1 @@
+from src.infra.python.list_stocks import *
