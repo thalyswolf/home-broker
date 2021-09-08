@@ -2,6 +2,7 @@ from unittest import TestCase, main
 
 from src.infra.providers.memory_stocks.stocks import MemoryStocksProvider
 from src.infra.repository import StocksOfferMemoryRepository
+from src.infra.message.stocks_offer_memory_message import StocksOfferMemoryMessage
 from src.core.usecase import GenerateOffers
 
 class GenerateOfferTest(TestCase):
@@ -10,8 +11,9 @@ class GenerateOfferTest(TestCase):
         ticket = 'ABEV3'
         memory_stocks_provider = MemoryStocksProvider()
         stocks_offer_memory_repository = StocksOfferMemoryRepository()
+        stocks_offer_memory_message = StocksOfferMemoryMessage()
 
-        stocks = GenerateOffers(memory_stocks_provider, stocks_offer_memory_repository).execute()
+        stocks = GenerateOffers(memory_stocks_provider, stocks_offer_memory_repository, stocks_offer_memory_message).execute()
         TestCase().assertTrue(isinstance(stocks, list))
 
 
